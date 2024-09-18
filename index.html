@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tasbeeh Counter</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="utility.css" />
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-firestore.js"></script>
+  </head>
+  <body>
+    <div class="main__container flex">
+      <div class="nav__section p-10 flex flex-column align-center">
+        <div class="navigation flex flex-column gap-10">
+          <h3>Tasbeeh Counter</h3>
+          <button class="nav-btn" onclick="dashboadClick()">Dashboard</button>
+          <button class="nav-btn" onclick="tasbeehClick('subhanallah')">Subhan-Allah</button>
+          <button class="nav-btn" onclick="tasbeehClick('alhamdulillah')">Alhamdulillah</button>
+          <button class="nav-btn" onclick="tasbeehClick('allahUakbar')">Allah-U-Akbar</button>
+          <button class="nav-btn" onclick="tasbeehClick('duroodEPak')">Durood-E-Pak</button>
+        </div>
+        <div class="account__section flex flex-column p-10">
+          <div class="buttons flex gap-10">
+            <button class="acc-btn">Login</button>
+            <button class="acc-btn">Signup</button>
+          </div>
+          <div class="account"><h3>Account Name</h3></div>
+        </div>
+      </div>
+      <div class="counter__section p-10">
+        <div class="dashboard" id="dashboard">
+          <h3>Dashboard</h3>
+          <div class="container flex align-center">
+            <div class="dashboard__card">
+              <div class="card__content border-1px flex flex-column rounded">
+                <h4>Subhan-Allah</h4>
+                <p>100 times</p>
+              </div>
+            </div>
+            <div class="dashboard__card">
+              <div class="card__content border-1px flex flex-column rounded">
+                <h4>Alhamdulillah</h4>
+                <p>100 times</p>
+              </div>
+            </div>
+            <div class="dashboard__card">
+              <div class="card__content border-1px flex flex-column rounded">
+                <h4>Allah-U-Akbar</h4>
+                <p>100 times</p>
+              </div>
+            </div>
+            <div class="dashboard__card">
+              <div class="card__content border-1px flex flex-column rounded">
+                <h4>Durood-E-Pak</h4>
+                <p>100 times</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="counter hidden flex flex-column justify-center align-center p-10" id="counter"
+        >
+          <h1>Tasbeeh Count</h1>
+          <div class="card__container flex justify-center align-center">
+            <div class="card border-1px flex flex-column align-center">
+              <h3 id="heading">Subhan-Allah</h3>
+              <p id="count">0</p>
+              <div class="btns flex align-center justify-center">
+                <button class="counter-btn" onclick="changeCounter('minus')">-</button>
+                <button class="counter-btn" onclick="changeCounter('plus')">+</button>
+                <button class="acc-btn">Save</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script src="app.js"></script>
+
+  </body>
+</html>

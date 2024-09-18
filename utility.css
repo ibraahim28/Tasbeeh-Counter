@@ -1,0 +1,55 @@
+.flex{
+    display: flex;
+}
+
+.flex-column{
+    flex-direction: column;
+}
+
+.justify-center{
+    justify-content: center;
+}
+
+.justify-between{
+    justify-content: space-between;
+}
+
+.justify-around{
+    justify-content: space-around;
+}
+
+.align-center{
+    align-items: center;
+}
+
+.gap-10{
+    gap: 10px;
+}
+
+.border-1px{
+    border: 1px solid black;
+}
+
+.p-10{
+    padding: 10px;
+}
+
+.p-20{
+    padding: 20px;
+}
+
+.m-10{
+    margin: 10px;
+}
+
+.m-20{
+    margin: 20px;
+}
+
+.hidden{
+    display: none;
+}
+
+.rounded{
+    border-radius: .5rem;
+}
