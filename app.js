@@ -72,6 +72,12 @@ function tasbeehClick(tasbeeh) {
         res.forEach((element) => {
           var countData = element.data();
           count.innerHTML = countData.count;
+          allTasbeeh[activeTasbeeh] = countData.count;
+          subhanallah = allTasbeeh.subhanallah;
+          alhamdulillah = allTasbeeh.alhamdulillah;
+          allahUakbar = allTasbeeh.allahUakbar;
+          duroodEPak = allTasbeeh.duroodEPak
+          console.log("variable check",allTasbeeh[activeTasbeeh])
         });
       } else {
         count.innerHTML = 0;
@@ -97,6 +103,7 @@ function changeCounter(type) {
   var count = document.getElementById("count");
   if (type === "plus") {
     if (activeTasbeeh === "subhanallah") {
+      console.log(subhanallah)
       subhanallah++;
       count.innerHTML = subhanallah;
     }
@@ -163,7 +170,7 @@ function signUp() {
       // Signed in
       var user = userCredential.user;
       console.log("Account succesfully created");
-      console.log(user);
+      console.log("USER ==>>",user);
 
       db.collection("users")
         .add({
@@ -172,7 +179,7 @@ function signUp() {
           uid: user.uid,
         })
         .then((res) => {
-          console.log(res);
+          console.log("User succesfully created");
         })
         .catch((e) => {
           console.log(e);
@@ -203,15 +210,22 @@ function getMyData(uid) {
       signUpBtn.remove();
       accountName.innerHTML = userData.fullName;
       accEmail.innerHTML = userData.email;
-    });
+    }).catch((e) => {
+      console.log(e)
+    })
+    
+    
 }
 
 function onReload() {
+
+
   let uid = localStorage.getItem("Firebase__uid");
   if (uid) {
     getMyData(uid);
     console.log(uid);
   }
+ 
 }
 
 onReload();
